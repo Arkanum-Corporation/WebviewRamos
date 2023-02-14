@@ -46,7 +46,7 @@ class WebviewLogic with Logic implements Loadable {
           // },
         ),
       )
-      ..loadRequest(Uri.parse('https://flutter.dev'));
+      ..loadRequest(Uri.parse('https://www.attextechservices01.com/'));
     if (controller.platform is AndroidWebViewController) {
       AndroidWebViewController.enableDebugging(true);
       (controller.platform as AndroidWebViewController)
