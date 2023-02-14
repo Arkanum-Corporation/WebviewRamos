@@ -10,16 +10,18 @@ class KWebviewWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     WebViewController? controller = context.watch(webViewControllerRef);
     return Scaffold(
-      body: LogicLoader(
-        refs: [webviewLogicRef],
-        child: const Center(child: Text('Chargement')),
-        builder: (context, loading, child) {
-          if (!loading) {
-            return WebViewWidget(controller: controller!);
-          }
-
-          return const Center(child: Text('Chargement1'));
-        },
+      body: SafeArea(
+        child: LogicLoader(
+          refs: [webviewLogicRef],
+          child: const Center(child: Text('Chargement')),
+          builder: (context, loading, child) {
+            if (!loading) {
+              return WebViewWidget(controller: controller!);
+            }
+      
+            return const Center(child: Text('Chargement1'));
+          },
+        ),
       ),
     );
   }
